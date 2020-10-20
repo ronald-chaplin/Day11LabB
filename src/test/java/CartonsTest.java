@@ -30,7 +30,7 @@ public class CartonsTest {
     @Test
     void getCartonsTest(){
         carton.setBars(400);
-        carton.setCartons(carton.getBars());
+        carton.setCartons();
         int expected =16;
         int actual = carton.getCartons();
         assertEquals(expected, actual, "This should be 16.");
@@ -39,15 +39,16 @@ public class CartonsTest {
     @Test
     void setCartonsTest(){
         carton.setBars(240);
-        carton.setCartons(carton.getBars());
+        carton.setCartons();
         int expected = 10;
         int actual = carton.getCartons();
         assertEquals(expected, actual, "This should be 10.");
     }
 
+    @Test
     void toStringTest(){
         carton = new Cartons(5000);
-        String expected = "208 carton(s) needed to package 5000 bar(S).";
+        String expected = "208 carton(s) needed to package 5000 bar(s).";
         String actual = carton.toString();
         assertEquals(expected, actual);
     }

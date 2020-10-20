@@ -9,11 +9,11 @@ public class Cartons {
     }
     public Cartons(int b){
         this.bars = b;
-        this.setCartons(this.getBars());
+        this.setCartons();
     }
 
-    public void setCartons(int b){
-        this.cartons = (int)(b/24);
+    public void setCartons(){
+        this.cartons = (int)(this.bars/24);
     }
 
     public int getCartons(){
@@ -29,8 +29,14 @@ public class Cartons {
         return this.bars;
     }
 
+    //@Override
+    //public String toString (int bars, int cartons){
+      //  return cartons + " carton(s) needed to package " + bars + " bar(s).";
+    //}
 
-    public String toString (int bars, int cartons){
+
+    @Override
+    public String toString() {
         return cartons + " carton(s) needed to package " + bars + " bar(s).";
     }
 }
